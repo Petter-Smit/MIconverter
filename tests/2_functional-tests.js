@@ -27,7 +27,7 @@ suite('Functional Tests', function() {
     });
     test('Convert an invalid number AND unit such as 3/7.2/4kilomegagram: GET request to /api/convert.', () => {
         chai.request(server).get('/api/convert').query({'input': '3/7.2/4kilomegagram'}).end((err, res) => {
-            assert.equal(res.body, 'invalid inputs');
+            assert.equal(res.body, 'invalid number and unit');
         });
     });
     test('Convert with no number such as kg: GET request to /api/convert.', () => {
